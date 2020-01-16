@@ -20,7 +20,7 @@ double power(double m ,int n)
 {
 	double x=1.0;
 	if (m==0.0)
-	cout<<"can't calculate";
+	cout<<"not possible";
     if (n==0)
     return 1;
     else for (int i=1;i<=n;i++)
