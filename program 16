@@ -1,11 +1,9 @@
 #include<iostream>
-#include<string>
 using namespace std; 
-class character { 
-public: 
+class character {  
     char i; 
 public: 
-   void intiate(char i) 
+   void initiate(char i) 
     { 
         this->i = i; 
     } 
@@ -21,13 +19,15 @@ public:
     } 
 }; 
 int main() 
-{ 
+{    char ch;
     character i1; 
     cout<<"enter a character: ";
-    cin.get(i1.i);
+    cin.get(ch);
+    i1.initiate(ch);
     cout << "Before increment: "; 
     i1.display(); 
     i1=++i1;
-    cout << "After post increment: "; 
+    cout << "After  increment: "; 
     i1.display(); 
+    return 0;
 } 
