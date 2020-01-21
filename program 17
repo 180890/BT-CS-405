@@ -25,4 +25,5 @@ int main()
 	cin>>a2.a>>a2.b;
 	a3=a1+a2;
 	a3.display();
+	return 0;
 }
