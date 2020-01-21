@@ -1,9 +1,14 @@
 #include<iostream>
 using namespace std;
 class point 
-{
+{   int a,b;
 	public:
-		int a,b;
+		
+		void initiate (int x ,int y)
+		{
+			this ->a=x;
+		   this ->b=y;
+		}
 		point operator +(point a1)
 		{
 			point x;
@@ -17,12 +22,14 @@ class point
     } 
 };
 int main()
-{
+{   int x1,y1,x2,y2;
 	point a1,a2,a3;
 	cout<<"enter frst point:"<<endl;
-	cin>>a1.a>>a1.b;
+	cin>>x1>>y1;
+	a1.initiate(x1,y1);
 	cout<<"enter second point:"<<endl;
-	cin>>a2.a>>a2.b;
+	cin>>x2>>y2;
+	a2.initiate(x2,y2);
 	a3=a1+a2;
 	a3.display();
 	return 0;
