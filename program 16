@@ -1,0 +1,33 @@
+#include<iostream>
+#include<string>
+using namespace std; 
+class character { 
+public: 
+    char i; 
+public: 
+   void intiate(char i) 
+    { 
+        this->i = i; 
+    } 
+    character operator ++() 
+    { 
+        character a; 
+        a.i = (int) (i+2);
+        return a; 
+    } 
+    void display() 
+    { 
+        cout << i << endl; 
+    } 
+}; 
+int main() 
+{ 
+    character i1; 
+    cout<<"enter a character: ";
+    cin.get(i1.i);
+    cout << "Before increment: "; 
+    i1.display(); 
+    i1=++i1;
+    cout << "After post increment: "; 
+    i1.display(); 
+} 
