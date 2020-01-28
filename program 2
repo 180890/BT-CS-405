@@ -1,0 +1,26 @@
+/* using inline function to print square of a number*/
+#include<iostream>
+using namespace std;
+class Square_num
+{
+	int a;
+	public:
+		Square_num (int x)
+		{
+			this->a=x;
+		}
+		inline void square(int y)
+		{
+			cout<<"square is:"<<y*y;
+		}
+};
+
+int main()
+{ 
+ int num;
+ cout<<"enter number:";
+ cin>>num;
+ Square_num obj (num);
+ obj.square(num);
+ return 0;
+}
