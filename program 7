@@ -1,0 +1,42 @@
+/* a friend function to add two time objects 
+of Time class storing system time.*/
+#include<iostream>
+#include<time.h>
+using namespace std;
+class Time
+{  time_t var =time(NULL);
+	struct tm tm=*localtime(&var);
+	int hour,min,sec;
+   public:
+   Time()
+   { hour=tm.tm_hour;
+    min=tm.tm_min;
+    sec=tm.tm_sec;
+   }
+   friend Time addtime(Time t1,Time t2)
+   { Time obj;
+   	obj.hour=t1.hour+t2.hour;
+   	obj.min=t1.min+t2.min;
+   	obj.sec=t1.sec+t2.sec;
+    return obj;
+   }
+   void display()
+   {
+   	cout<<"hour: "<<this->hour<<endl;
+	cout<<"minute: "<<this->min<<endl;
+	cout<<"second: "<<this->sec<<endl;
+   }
+};
+int main()
+{    
+	Time t1 ,obj1;
+	cout<<"time one:"<<endl;
+	t1.display();
+	cin.get();
+	Time t2;
+	cout<<"time two:"<<endl;
+	t2.display();
+    obj1=addtime(t1,t2);
+    cout<<"sum of time: "<<endl;
+	obj1.display();
+}
