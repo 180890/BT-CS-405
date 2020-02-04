@@ -1,0 +1,58 @@
+#include<iostream> 
+using namespace std; 
+class Matrix 
+{ 
+	int R; 
+	int **arr; 
+
+public: 
+	Matrix(int R,int num);
+	void print(); 
+	void setmat();
+}; 
+void Matrix::setmat()
+{ 
+	for (int i=0; i<R; i++) 
+	{
+	for(int j=0;j<R;j++)
+	{int num;
+	
+	  cin>>num;
+	  arr[i][j]=num;} 
+	}
+}
+Matrix::Matrix(int R ,int num=4) 
+{ 
+	this->R = R; 
+	arr = new int* [R];  
+	for (int i=0; i<R; i++) 
+	{ 
+	arr[i] = new int[R];
+	for(int j=0;j<R;j++)
+	{arr[i][j]=num;} 
+	} 
+} 
+void Matrix::print() 
+{ 
+for (int u=0; u<R; u++) 
+{ 
+	for (int v=0; v<R; v++) 
+		cout << arr[u][v] << "	"; 
+	cout << endl; 
+} 
+} 
+int main() 
+{ 
+  int x;
+  cout<<"Enter number of rows or column: ";
+  cin>>x;
+	Matrix a(x); 
+	cout<<"Matrix before setting:-"<<endl;
+	a.print();
+	cout<<"Enter numbers to set matrix:-";
+	a.setmat();
+	cout<<"Matrix after setting:"<<endl;
+	a.print();
+
+	return 0; 
+} 
