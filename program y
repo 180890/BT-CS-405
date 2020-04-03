@@ -1,0 +1,30 @@
+/* program to add two numbers using function and class*/
+#include<iostream>
+using namespace std;
+class Add{
+	int a,b;
+	public:
+		Add(int x , int y)
+		{
+			this->a=x;
+			this->b=y;
+		}
+		int add()
+		{
+			int c= a+b;
+		}
+		void display()
+		{
+			int x= add();
+			cout<<"result:"<<x;
+		}
+		
+};
+int main()
+{  int x,y;
+cout<<"numbers to add:";
+cin>>x>>y;
+Add a1(x,y);
+a1.display();
+	return 0;
+}
