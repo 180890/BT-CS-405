@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+class Array{	
+    int* ptr= new int[10];
+	public:
+	void setdata(){
+		for(int i=0;i<10;i++)
+		cin>>ptr[i];
+	}
+	void getdata()
+	{   cout<<"elements are:"<<endl;
+		for(int i=0;i<10;i++)
+		cout<<ptr[i]<<" ";
+	}
+};
+int main()
+{
+	Array a1;
+	a1.setdata();
+	a1.getdata();
+}
