@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+class Number
+{
+int n;
+public:
+Number(int x)
+{
+	n=x;
+	}
+	void util()
+	{
+		if(n%2==0)
+		cout<<"is even";
+		else 
+		cout<<"is odd";
+		}	
+};
+int main()
+{
+	int x;
+	cout<<"enter a number";
+	cin>>x;
+	Number n1(x);
+	n1.util();
+}
