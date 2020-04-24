@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+
+class Student{ 
+ protected:
+ int marks;
+ 
+ public: 
+ void getdata(int m){ 
+   marks= m;
+     }
+ };
+     
+     
+class Test :public Student{ 
+  protected:
+  int p=0;
+  public: 
+  void check(){ 
+    if(marks>51){ 
+    p=1;
+   } 
+} 
+
+}; 
+
+
+class Result :public Test{ 
+public: 
+void print()
+{ 
+     if(p==1) cout<<" You have passed"<<endl;
+     else cout<<"You have not passed"<<endl;
+} 
+
+}; 
+
+int main()
+{ 
+int m;
+cout<<" Enter marks:--"; 
+cin>>m; 
+Result r;
+r.getdata(m);
+r.check(); 
+r.print();
+return 0; }
