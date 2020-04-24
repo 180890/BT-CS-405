@@ -1,0 +1,50 @@
+/** program to show multiple inheritence within classes**/
+#include <iostream>
+using namespace std;
+class Area
+{
+	public:
+		int getArea(int l, int b)
+		{
+			return l * b;
+		}
+};
+
+class Perimeter
+{
+	public:
+		int getPerimeter(int l, int b)
+		{
+			return 2*(l + b);
+		}
+};
+
+class Rectangle : public Area, public Perimeter
+{
+	int length;
+	int breadth;
+	public:
+		Rectangle(int l, int b)
+		{
+			length=l;
+			breadth=b;
+		}
+		int area()
+		{
+			return Area::getArea(length, breadth);
+		}
+		int perimeter()
+		{
+			return Perimeter::getPerimeter(length, breadth);
+		}
+};
+
+int main()
+{   int x,y;
+    cout<<"enter numbers:-"<<endl;
+    cin>>x>>y;
+	Rectangle rt(x,y);
+	cout << "Area : " << rt.area() << endl;
+	cout << "Perimeter : " << rt.perimeter() << endl;
+	return 0;
+}
