@@ -1,0 +1,65 @@
+/** program to show hybrid inheritance**/
+#include<iostream>
+using namespace std;
+class Arithmetic
+{
+protected:
+int num1, num2;
+public:
+void setdata(int x,int y)
+{
+    num1=x;
+    num2=y; 
+}
+};
+class Plus:public Arithmetic
+{
+protected:
+int sum;
+public:
+void add()
+{
+sum=num1+num2;
+}
+};
+class Minus
+{
+protected:
+int n1,n2,diff;
+public:
+void sub(int a1,int a2)
+{ n1=a1;
+  n2=a2; 
+  diff=n1-n2;
+}
+};
+class Result:public Plus, public Minus
+{
+public:
+void display()
+{
+cout<<"\nSum of "<<num1<<" and "<<num2<<"= "<<sum;
+cout<<"\nDifference of "<<n1<<" and "<<n2<<"= "<<diff;
+}
+};
+int main()
+{ int nu1,nu2,n1,n2;
+cout<<"For Addition:";
+cout<<"\nEnter the first number: ";
+cin>>nu1;
+cout<<"\nEnter the second number: ";
+cin>>nu2;
+
+
+cout<<"\nFor Subtraction:";
+cout<<"\nEnter the first number: ";
+cin>>n1;
+cout<<"\nEnter the second number: ";
+cin>>n2;
+Result z;
+z.setdata(nu1,nu2);
+z.add();
+z.sub(n1,n2);
+z.display();
+return 0;
+}
